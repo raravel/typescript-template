@@ -7,7 +7,8 @@
 		"test": "mocha -r ts-node/register ./tests/example.test.ts",
 		"dev": "nodemon --watch src --watch package.json --watch tsconfig.js --delay 1 --exec 'npm run lint --silent; ts-node' src/index.ts",
 		"lint": "tslint -p . --force",
-		"build": "tsc"
+		"build": "tsc",
+		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.2.19",
