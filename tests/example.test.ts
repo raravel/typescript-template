@@ -1,6 +1,13 @@
-import { str } from '../src/';
+import { fail, success } from '../src/';
 
-describe('📌 String Check', () => {
-	it('Matching', () => str === 'Hello World');
-	it('Not Matching', () => str !== 'Bye World');
+describe('📌 Function Check', () => {
+	it('Success', () => success() === true);
+	it('Fail', () => {
+		try {
+			fail();
+			return false;
+		} catch ( err ) {
+			err.message('Something failed');
+		}
+	});
 });
